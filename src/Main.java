@@ -1,5 +1,7 @@
 import com.sun.source.doctree.SummaryTree;
 
+import java.util.Locale;
+
 public class Main {
     public static void main(String[] args) {
         task1();
@@ -46,80 +48,72 @@ public static void task2() {
 }
     public static void task3() {
         System.out.println("Задача 3:");
-        byte pupilsAnnaSerg = 27;
-        byte pupilsLyudPavl = 23;
-        byte pupilsYekatAndr = 30;
-        int totalPaper = 480;
-        int pupilsPaper = totalPaper / (pupilsAnnaSerg + pupilsLyudPavl + pupilsYekatAndr);
-        System.out.println("На каждого ученика рассчитано " + pupilsPaper + " листов бумаги.");
+        byte pupilsInFirstClass = 27;
+        byte pupilsInSecondClass = 23;
+        byte pupilsInThirdClass = 30;
+        int totalPaperCount = 480;
+        int totalPupils = pupilsInFirstClass + pupilsInSecondClass + pupilsInThirdClass;
+        int paperPerPupils = totalPaperCount / totalPupils;
+        System.out.println("На каждого ученика рассчитано " + paperPerPupils + " листов бумаги.");
     }
     public static void task4() {
         System.out.println("Задача 4:");
-        int capacity = 16;
-        int capacityPerMin = capacity / 2;
-        int capacityPerHour = capacityPerMin * 60;
-        int capacityPer20Min = capacityPerMin * 20;
-        System.out.println("За 20 мин. машина произвела " + capacityPer20Min +
+        int bottles = 16;
+        int minutes = 2;
+        int bottlesPerMin = bottles / minutes;
+        int bottlesPerHour = bottlesPerMin * 60;
+        int bottlesPer20Min = bottlesPerMin * 20;
+        System.out.println("За 20 мин. машина произвела " + bottlesPer20Min +
+                " шт");
+        int bottlesPerDay = bottlesPerHour * 24;
+        System.out.println("За 1 день машина произвела " + bottlesPerDay +
                 " штук бутылок");
-        int capacityPerDay = capacityPerHour * 24;
-        System.out.println("За 1 день машина произвела " + capacityPerDay +
+        int bottlesPer3Day = bottlesPerDay * 3;
+        System.out.println("За 3 дня машина произвела " + bottlesPer3Day +
                 " штук бутылок");
-        int capacityPer3Day = capacityPerDay * 3;
-        System.out.println("За 3 дня машина произвела " + capacityPer3Day +
-                " штук бутылок");
-        int capacityPerMonth = capacityPerDay * 30;
-        System.out.println("За 1 месяц машина произвела " + capacityPerMonth +
+        int bottlesPerMonth = bottlesPerDay * 30;
+        System.out.println("За 1 месяц машина произвела " + bottlesPerMonth +
                 " штук бутылок");
     }
     public static void task5() {
         System.out.println("Задача 5:");
-        int paintTotal = 120;
-        int paintWhitePerClass = 2;
-        int paintBrownPerClass = 6;
-        int paintPerClass = paintWhitePerClass + paintBrownPerClass;
-        int classQty = paintTotal / paintPerClass;
-        int paintWhiteTotal = classQty * paintWhitePerClass;
-        int paintBrownTotal = classQty * paintBrownPerClass;
-        System.out.println("В школе где " + classQty + " классов, нужно " + paintWhiteTotal +
-                " банок белой краски и " + paintBrownTotal + " банок коричневой краски.");
+        int totalCans = 120;
+        int whiteCansPerClass = 2;
+        int brownCansPerClass = 6;
+        int totalClass = totalCans / (whiteCansPerClass + brownCansPerClass);
+        int totalWhiteCans = totalClass * whiteCansPerClass;
+        int totalBrownCans = totalClass * brownCansPerClass;
+        System.out.println("В школе где " + totalClass + " классов, нужно " + totalWhiteCans +
+                " банок белой краски и " + totalBrownCans + " банок коричневой краски.");
     }
     public static void task6() {
         System.out.println("Задача 6:");
-        int bananaTotalPcs = 5;
-        int bananaWeightPer1pcsGr = 80;
-        int bananaWeightTotalGr = bananaTotalPcs * bananaWeightPer1pcsGr;
-        int milkTotalMl = 200;
-        int milkWeightPer100MlGr = 105;
-        int milkWeightTotalGr = milkTotalMl * milkWeightPer100MlGr;
-        int icecreamTotalPcs = 2;
-        int icecreamWeightPer1PcsGr = 100;
-        int icecreamWeightTotalGr = icecreamTotalPcs * icecreamWeightPer1PcsGr;
-        int eggTotalPcs = 4;
-        int eggWeightPer1PcsGr = 70;
-        int eggWeightTotalGr = eggTotalPcs * eggWeightPer1PcsGr;
-        int breakfastWeightTotalGr = bananaWeightTotalGr + milkWeightTotalGr +
-                icecreamWeightTotalGr + eggWeightTotalGr;
-        int grPerKg = 1000;
-        float breafastWeightTotalKg = breakfastWeightTotalGr / (float) grPerKg;
-        System.out.println("Вес спортзавтрака = " + breakfastWeightTotalGr +
-                "гр, или " + breafastWeightTotalKg + " кг.");
+        int bananasCount = 5;
+        int weightBananaUnit = 80;
+        int milkCount = 2;
+        int weightMilkUnit = 105;
+        int iceCreamCount = 2;
+        int weightIceCreamUnit = 100;
+        int eggCount = 4;
+        int weightEggUnit = 70;
+        int totalWeightInGrams = bananasCount * weightBananaUnit + milkCount * weightMilkUnit +
+                iceCreamCount * weightIceCreamUnit + eggCount * weightEggUnit;
+        double totalWeightInKg = totalWeightInGrams / 1_000D;
+        System.out.println("Вес спортзавтрака = " + totalWeightInGrams +
+                "гр, или " + totalWeightInKg + " кг.");
     }
     public static void task7() {
         System.out.println("Задача 7:");
-        int looseWeightTotalKg = 7;
-        int looseWeightPerDayGr1 = 250;
-        int looseWeightPerDayGr2 = 500;
-        int grPerKg = 1000;
-        float looseWeightPerDayKg1 = looseWeightPerDayGr1 / (float) grPerKg;
-    float looseWeightPerDayKg2 = looseWeightPerDayGr2 / (float) grPerKg;
-    float looseWeightTotalDay1 = looseWeightTotalKg / looseWeightPerDayKg1;
-    float looseWeightTotalDay2 = looseWeightTotalKg / looseWeightPerDayKg2;
-    float looseWeightPerDayAverageKg = (looseWeightPerDayKg1 + looseWeightPerDayKg2) / 2;
-    float looseWeightTotalDayAverage = looseWeightTotalKg / looseWeightPerDayAverageKg;
-    System.out.println(looseWeightTotalDay1 + " дней уйдет, если сбрасывать по 250 гр" +
-            " в день, и " + looseWeightTotalDay2 + " уйдет, если сбрасывать по 500 гр" +
-            " в день. А в среднем может понадобиться " + looseWeightTotalDayAverage +
-            " дней на сброс веса в 7 кг.");
+        int weightForLossInGr = 7_000;
+        int looseWeightPerDayMin = 250;
+        int looseWeightPerDayMax = 500;
+        double minDayCount = (double) weightForLossInGr / looseWeightPerDayMax;
+        double maxDayCount = (double) weightForLossInGr / looseWeightPerDayMin;
+        double looseWeightPerDayAverage = (looseWeightPerDayMax + looseWeightPerDayMin) / 2D;
+        double averageDayCount = weightForLossInGr / looseWeightPerDayAverage;
+    System.out.println(maxDayCount + " дней уйдет, если сбрасывать по 250 гр" +
+            " в день, и " + minDayCount + " уйдет, если сбрасывать по 500 гр в день.");
+           System.out.printf(Locale.US,"А в среднем может понадобиться %.2f%n" ,averageDayCount, " дней.");
     }
     public static void task8() {
         System.out.println("Задача 8:");
