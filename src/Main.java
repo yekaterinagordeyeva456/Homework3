@@ -1,5 +1,3 @@
-import com.sun.source.doctree.SummaryTree;
-
 import java.util.Locale;
 
 public class Main {
@@ -14,7 +12,7 @@ public class Main {
         task8();
     }
     public static void task1() {
-        System.out.println("Задача 1:");
+        System.out.println("Задача 1");
         int apple = 33000;
         System.out.println("Значение переменной apple c типом int равно " + apple);
         byte white = 5;
